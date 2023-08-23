@@ -41,9 +41,7 @@ List * createList() {
 }
 
 void * firstList(List * list) {
-    if (list->head == NULL) {
-        return NULL; // La lista está vacía
-    }
+    
     return (list->head->data);
 }
 
