@@ -52,7 +52,7 @@ void * nextList(List * list) {
 }
 
 void * lastList(List * list) {
-  if (list->head == NULL) {
+  if (list->tail == NULL) {
     return NULL; // La lista está vacía
   }
   return (list->tail->data);
