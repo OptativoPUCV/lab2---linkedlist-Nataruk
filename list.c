@@ -34,14 +34,17 @@ List * createList() {
     //no se pudo asignar memoria para la lista
     exit(1);
   }
-  newList->head = NULL;
-  newList->tail = NULL;
-  newList->current = NULL;
-  return newList;
+  newList->head = NULL; // la cabeza se inicia apuntando a null
+  newList->tail = NULL; // la colita o "fin" se inicia apuntando a null
+  newList->current = NULL; // la posición actual de la cola se inicia apuntando a null
+  return newList; // se retorna la nueva lista
 }
 
 void * firstList(List * list) {
-    return NULL;
+    if (list->head == NULL) {
+        return NULL; // La lista está vacía
+    }
+    return &(list->head->data);
 }
 
 void * nextList(List * list) {
