@@ -44,7 +44,7 @@ void * firstList(List * list) {
     if (list->head == NULL) {
         return NULL; // La lista está vacía
     }
-    return (list->head);
+    return (list->head->data);
 }
 
 void * nextList(List * list) {
