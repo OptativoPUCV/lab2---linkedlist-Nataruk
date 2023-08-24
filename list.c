@@ -69,11 +69,11 @@ void * lastList(List * list) {
   }
     return (list->tail->data); */
   if (list->tail == NULL) {
-      return NULL; // La lista está vacía
-    }
+    return NULL; // La lista está vacía
+  }
 
-    int* lastElement = (list->tail->data);
-    list->current = NULL;
+    int* lastElement = &(list->tail->data);
+    list->current = list->tail;
 
     return lastElement;
 }
