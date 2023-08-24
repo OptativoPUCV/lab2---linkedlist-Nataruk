@@ -40,7 +40,7 @@ List * createList() {
   return newList; // se retorna la nueva lista
 }
 
-void * firstList(struct List * list) {
+void * firstList(List * list) {
   if (list->head == NULL) {
       return NULL; // La lista está vacía
   }
