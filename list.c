@@ -63,11 +63,6 @@ void * nextList(List * list) {
 }
 
 void * lastList(List * list) {
-  /*
-  if (list->tail == NULL) {
-    return NULL; // La lista está vacía
-  }
-    return (list->tail->data); */
   if (list->tail == NULL) {
     return NULL; // La lista está vacía
   }
@@ -79,7 +74,26 @@ void * lastList(List * list) {
 }
 
 void * prevList(List * list) {
+  if (list->current == NULL) {
+    return NULL; // No hay elemento anterior si current es NULL
+  }
+
+  struct Node* previousNode = NULL;
+  struct Node* currentNode = list->head;
+
+  while (currentNode != NULL && currentNode != list->current) {
+    previousNode = currentNode;
+    currentNode = currentNode->next;
+  }
+
+  if (previousNode == NULL) {
+    list->current = NULL; // Si no se encontró el elemento actual en la lista
     return NULL;
+  }
+
+  list->current = previousNode;
+  return &(previousNode->data);
+    
 }
 
 void pushFront(List * list, void * data) {
