@@ -48,7 +48,18 @@ void * firstList(List * list) {
 }
 
 void * nextList(List * list) {
-    return NULL;
+  
+  if (list->current == NULL) {
+      return NULL; // No hay siguiente elemento
+    }
+    
+    list->current = list->current->next;
+    
+    if (list->current == NULL) {
+      return NULL; // No hay siguiente elemento después de avanzar
+    }
+    
+    return (list->current->data);
 }
 
 void * lastList(List * list) {
