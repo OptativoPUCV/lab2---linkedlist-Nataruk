@@ -116,6 +116,22 @@ void pushBack(List * list, void * data) {
 }
 
 void pushCurrent(List * list, void * data) {
+  if (list->current == NULL) {
+    fprintf(stderr, "Error: No hay nodo actual\n");
+    return;
+  }
+
+  struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+  if (newNode == NULL) {
+      exit(1);
+  }
+  newNode->data = data;
+  newNode->next = list->current->next;
+  list->current->next = newNode;
+
+  if (newNode->next == NULL) {
+      list->tail = newNode;
+  }
 }
 
 void * popFront(List * list) {
