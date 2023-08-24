@@ -92,7 +92,7 @@ void * prevList(List * list) {
   }
 
   list->current = previousNode;
-  return &(previousNode->data);
+  return (previousNode->data);
     
 }
 
