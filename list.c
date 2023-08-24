@@ -63,10 +63,19 @@ void * nextList(List * list) {
 }
 
 void * lastList(List * list) {
+  /*
   if (list->tail == NULL) {
     return NULL; // La lista está vacía
   }
-    return (list->tail->data);
+    return (list->tail->data); */
+  if (list->tail == NULL) {
+      return NULL; // La lista está vacía
+    }
+
+    int* lastElement = &(list->tail->data);
+    list->current = NULL;
+
+    return lastElement;
 }
 
 void * prevList(List * list) {

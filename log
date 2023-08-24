@@ -97,3 +97,14 @@ Thu 24 Aug 2023 12:15:21 AM UTC:
  tests:  5|4
 total_score: 25/70
 2e0b6f0
+Thu 24 Aug 2023 12:17:16 AM UTC: 
+ list.c | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+list.c: In function ‘lastList’:
+list.c:75:24: error: initialization of ‘int *’ from incompatible pointer type ‘void **’ [-Werror=incompatible-pointer-types]
+   75 |     int* lastElement = &(list->tail->data);
+      |                        ^
+cc1: all warnings being treated as errors
+Compilation failed
+53d8a2b
