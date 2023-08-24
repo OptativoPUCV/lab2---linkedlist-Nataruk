@@ -116,28 +116,28 @@ void pushBack(List * list, void * data) {
 }
 
 void pushCurrent(List * list, void * data) {
-  if (list->current == NULL) {
-    return;
-  }
+   if (list->current == NULL) {
+      return;
+    }
 
-  struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
-  if (newNode == NULL) {
-    exit(1);
-  }
-  newNode->data = data;
-  newNode->next = list->current->next;
-  newNode->prev = list->current;
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    if (newNode == NULL) {
+      exit(1);
+    }
+    newNode->data = data;
+    newNode->next = list->current->next;
+    newNode->prev = list->current;
 
-  if (list->current->next != NULL) {
-    list->current->next->prev = newNode;
-  }
+    if (list->current->next != NULL) {
+      list->current->next->prev = newNode;
+    }
 
-  list->current->next = newNode;
+    list->current->next = newNode;
 
-  if (newNode->next == NULL) {
-    list->tail = newNode;
-    list->tail->prev = list->head;  // Actualizar tail->prev al head
-  }
+    if (newNode->next == NULL) {
+      list->tail = newNode;
+      list->tail->prev = list->current;  // Actualizar tail->prev a current
+    }
 }
 
 void * popFront(List * list) {
