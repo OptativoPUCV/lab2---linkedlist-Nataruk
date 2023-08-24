@@ -123,14 +123,16 @@ void pushCurrent(List * list, void * data) {
 
   struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
   if (newNode == NULL) {
-      exit(1);
+    fprintf(stderr, "Error: No se pudo asignar memoria para el nodo\n");
+    exit(1);
   }
   newNode->data = data;
   newNode->next = list->current->next;
+  newNode->prev = list->head;  // Establecer el prev al head
   list->current->next = newNode;
 
   if (newNode->next == NULL) {
-      list->tail = newNode;
+    list->tail = newNode;
   }
 }
 
