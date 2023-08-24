@@ -29,7 +29,7 @@ Node * createNode(void * data) {
 }
 
 List * createList() {
-  struct List* newList = (struct List*)malloc(sizeof(struct List));
+  struct List* newList = (struct List*)malloc(sizeof(struct List)); // se crea la lista con memoria dinámica
   if (newList == NULL) {
     //no se pudo asignar memoria para la lista
     exit(1);
@@ -40,7 +40,7 @@ List * createList() {
   return newList; // se retorna la nueva lista
 }
 
-void * firstList(List * list) {
+void * firstList(struct List * list) {
   if (list->head == NULL) {
       return NULL; // La lista está vacía
   }
