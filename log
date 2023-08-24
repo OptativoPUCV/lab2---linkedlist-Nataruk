@@ -125,3 +125,9 @@ list.c:75:24: error: initialization of ‘int *’ from incompatible pointer typ
 cc1: all warnings being treated as errors
 Compilation failed
 4d73edb
+Thu 24 Aug 2023 12:45:58 AM UTC: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  6|4
+total_score: 25/70
+ecc13b5

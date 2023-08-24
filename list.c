@@ -72,7 +72,7 @@ void * lastList(List * list) {
     return NULL; // La lista está vacía
   }
 
-    int* lastElement = &(list->tail->data);
+    int* lastElement = (list->tail->data);
     list->current = list->tail;
 
     return lastElement;
